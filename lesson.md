@@ -1,217 +1,283 @@
-# **Version Control for Everyone: From Zero to Hero**
+# Version Control Made Simple: Git, GitHub & VS Code
 
-**Duration:** 3 Hours
+**Duration:** 1.5 Hours (90 minutes)
 
-**Format:** 20% Theory / 80% Hands-on
+**Format:** 30% Concepts / 70% Hands-on Practice
 
-**Goal:** Empower non-technical learners to manage versions, sync work across devices, and collaborate using Git, GitHub, VS Code, and Google Colab.
+**Goal:** Help non-technical learners confidently save, track, and share their work using Git, GitHub, and VS Code.
 
-Watch this intro video: [Git & GitHub Zero to Hero](https://youtu.be/1I79WAZ4uSU) & [Google Colab](https://www.youtube.com/watch?v=V7RXyqFUR98)
-
-## **🎯 Learning Objectives**
-
-By the end of this session, you will be able to:
-
-1. **Explain** the difference between Git (the engine) and GitHub (the cloud).  
-2. **Create** your first repository (project folder) on GitHub.  
-3. **Connect** Google Colab to GitHub to save your work in the cloud.  
-4. **Clone** a repository to your local computer using VS Code.  
-5. **Execute** the "Golden Loop": Stage \-\> Commit \-\> Push.  
-6. **Collaborate** using Branches and Pull Requests (Simulated Teamwork).
-
-## **🛠 Prerequisites (Please complete before session)**
-
-* **Accounts:** A free GitHub account (github.com) and a Google account.  
-* **Software:**  
-  * [Visual Studio Code (VS Code)](https://code.visualstudio.com/) installed.  
-  * [Git](https://www.google.com/search?q=https://git-scm.com/downloads) installed on your machine.
-  * If you have not done so, please revisit [First time installation](https://github.com/su-ntu-ctp/6m-data-1.0-Welcome-Onboarding/blob/main/installation.md) 
-* **Mindset:** Don't worry if you break something. In Git, it is actually very hard to lose work permanently\!
-
-## **🕒 Workshop Agenda**
-
-| Time | Activity | Type |
-| ----- | ----- | ----- |
-| **0:00 \- 0:20** | **Module 1: The "Why" & The Cloud** | Theory (20m) |
-| **0:20 \- 0:50** | **Exercise A: The Cloud Connection (Colab \+ GitHub)** | Hands-on (30m) |
-| **0:50 \- 1:00** | **Module 2: The Mental Model (Local vs. Remote)** | Theory (10m) |
-| **1:00 \- 1:45** | **Exercise B: The Workbench (VS Code Sync)** | Hands-on (45m) |
-| **1:45 \- 2:00** | *Break* | Rest (15m) |
-| **2:00 \- 2:10** | **Module 3: Collaboration Theory** | Theory (10m) |
-| **2:10 \- 2:50** | **Exercise C: Teamwork Simulation (Pull Requests)** | Hands-on (40m) |
-| **2:50 \- 3:00** | **Wrap Up & Next Steps** | Summary (10m) |
-
-## **📘 Part 1: The "Why" & The Cloud (20 mins)**
-
-### **The Concept**
-
-Imagine you are writing a very important document. You save it as `Final.docx`. Then you change it and save `Final_v2.docx`. Then `Final_Real_v3.docx`. This is messy.
-
-**Git** is like a time machine. It takes a snapshot of your folder every time you tell it to. You can travel back to any snapshot at any time.
-
-**GitHub** is simply a website where we store those snapshots. Think of it like Google Drive or Dropbox, but specifically designed for tracking changes in text and code.
-
-**Google Colab** (short for Colaboratory) is a free cloud-based platform for writing and running Python code in your web browser. Think of it as a notebook where you can write code, see results immediately, and save everything to the cloud without installing anything on your computer.
-
-* **Why use Google Colab for data science?**
-
-* * **No installation needed:** Just open your browser and start coding.
-* * **Free computing power:** Access to GPUs and TPUs for machine learning tasks.
-* * **Easy sharing:** Share notebooks with colleagues just like Google Docs.
-* * **GitHub integration:** Save your work directly to GitHub repositories.
-* * **Pre-installed libraries:** Common data science libraries (pandas, numpy, matplotlib) are already available.
-
-### **Key Terms**
-
-* **Repository (Repo):** A project folder.  
-* **Commit:** A save point (snapshot).  
-* **Push:** Uploading your save points to the cloud (GitHub).
-
-
-
-## **💻 Exercise A: The Cloud Connection (30 mins)**
-
-*Goal: Create a repo and save a file to it without installing anything locally yet.*
-
-1. **Create the Repository:**  
-   * Go to `github.com` and log in.  
-   * Click the **\+** icon in the top right \-\> **New repository**.  
-   * **Repository name:** `my-first-data-journal`  
-   * **Description:** "Learning Git with DSAI"  
-   * **Public/Private:** Public.  
-   * **Initialize with a README:** Check this box (Important\!).  
-   * Click **Create repository**.  
-2. **Open Google Colab:**  
-   * Open a new tab and go to `colab.research.google.com`.  
-   * Click **New Notebook**.  
-   * In the first cell, write a simple Python print statement or just text:
-
-```python
-print("Hello, GitHub! This is my first commit.")
-```
-
-   *   
-     Run the cell (Shift \+ Enter).  
-3. **Save to GitHub:**  
-   * In Colab, go to **File** \-\> **Save a copy in GitHub**.  
-   * A popup will ask for authorization. Click **Authorize googlecolab**.  
-   * **Repository:** Select your `my-first-data-journal`.  
-   * **Branch:** Keep it as `main`.  **Notice** If you didn't check "Initialize with a README" option in previous step, you will not see `main` in this step. 
-   * **Commit message:** Type "Created notebook via Colab".  
-   * Click **OK**.  
-4. **Verify:**  
-   * Go back to your GitHub tab. Refresh the page. You should see your `.ipynb` file there\!
+Watch before class: [Git & GitHub Zero to Hero](https://youtu.be/1I79WAZ4uSU) *(15 mins)*
 
 ---
 
-## **📘 Part 2: The Mental Model (10 mins)**
+## 🎯 Learning Objectives
 
-*Goal: Sync VS Code with GitHub and master the "Golden Loop".*
+By the end of this session, you will be able to:
 
-Now we move from the cloud to your actual computer. This is where it gets interesting.
+1. Explain what Git and GitHub are — and why they matter
+2. Describe the difference between "local" (your computer) and "remote" (GitHub)
+3. Use the essential Git actions: Stage → Commit → Push → Pull
+4. Connect VS Code to GitHub and keep your work in sync
+5. *(Optional)* Explain what Google Colab is and how it connects to GitHub
 
-**New Key Concepts: Fork and Clone**
+---
 
-When working on a shared project, you will often encounter two related, but different, ways to get a copy of the code:
+## 🕒 Session Agenda
 
-* **Fork:** This is a process on **GitHub** (the cloud) where you create a **personal copy** of someone else's repository on *your own* GitHub account. You use this when you want to contribute to a project you don't have direct write access to, or when you want to start your own project based on theirs. The original project remains untouched.
+| Time | Activity | Type |
+|------|----------|------|
+| **0:00 – 0:15** | Module 1: What is Git & GitHub? | Concepts (15 min) |
+| **0:15 – 0:30** | Module 2: Local vs. Remote | Concepts + Demo (15 min) |
+| **0:30 – 0:55** | Exercise A: Your First Repository & Commit | Hands-on (25 min) |
+| **0:55 – 1:20** | Exercise B: Make Changes & Stay in Sync | Hands-on (25 min) |
+| **1:20 – 1:30** | Module 3: What is Colab? + Wrap Up | Concepts (10 min) |
 
-* **Clone:** This is the process of **downloading** a repository (your original, your fork, or any public repo) from GitHub to your **local computer** (where you work in VS Code).
+---
 
-Demo: Forking and Cloning for Collaboration
+## 📘 Module 1: What is Git & GitHub? (15 mins)
 
-*Goal: Make a personal copy of a team's project and get it onto your local computer.*
+### The Problem Git Solves
 
-## **💻 Exercise B: The Workbench (45 mins)**
+Imagine you are writing an important report. You save it as `Report_Final.docx`. Then you make more changes: `Report_Final_v2.docx`. Then `Report_Final_REAL_v3.docx`. Sound familiar?
 
-1. **Fork the Repository (The Cloud Copy):**  
-   * Go to the main project's GitHub page (e.g., [https://github.com/su-ntu-ctp/6m-data-1.0-Welcome-Onboarding](https://github.com/su-ntu-ctp/6m-data-1.0-Welcome-Onboarding)).  
-   * Click the **Fork** button in the top right corner. This creates a full copy of the project under *your* GitHub account.
+This is confusing, takes up space, and makes it hard to know which version is the "real" one.
 
-2. **Clone Your Fork (The Local Download):**  
-   * Navigate to *your forked repository's* page on GitHub.  
-   * Click the green **Code** button and copy the repository's URL.  
-   * Open **VS Code**, (**For Windows:** Connect to WSL by clicking the bottom left "Open a Remote Window" button.)
-   * Use the Command Palette (Ctrl+Shift+P or Cmd+Shift+P), and select **Git: Clone**.  
-   * Paste the URL of your GitHub repository
-   * Select a folder on your computer to save it (e.g., Documents).
-   * Click **Open** when prompted.
+**Git** solves this by acting like a **time machine** for your files. Every time you tell it to, Git takes a *snapshot* of your work. You can label each snapshot with a description, and jump back to any snapshot at any time — without creating dozens of copies.
 
-There are three places your work lives:
+### Git vs. GitHub — What's the Difference?
 
-   1. **Working Directory:** The files you are editing right now in VS Code.  
-   2. **Staging Area:** A "waiting room" where you pick which files to save.  
-   3. **Repository (Local):** The permanent record on your hard drive.
+Think of it this way:
 
-**The Workflow:** `Changes` \-\> **Add** (to Staging) \-\> **Commit** (to Repo) \-\> **Push** (to GitHub).
+> **Git** is the camera that takes the snapshots.  
+> **GitHub** is the photo album in the cloud where you store and share them.
 
-3. **Make a Change:**  
-   * In the file explorer (left sidebar), right-click \-\> **New File**.  
-   * Name it `notes.txt`.  
-   * Type: "Git is a time machine." Save the file (`Ctrl+S`).  
-4. **The Source Control Tab:**  
-   * Click the icon on the far left that looks like a web of lines (Source Control).  
-   * You will see `notes.txt` under "Changes".  
-   * **Step 1 (Add):** Click the **\+** sign next to `notes.txt`. This moves it to "Staged Changes".  
-   * **Step 2 (Commit):** In the message box, type "Added my first note". Click **Commit** (the checkmark or the 'Commit' button).  
-5. **Sync (Push):**  
-   * You will see a blue button saying **Sync Changes** (or a number next to the cloud icon at the bottom). Click it.  
-   * *Note:* If it asks for a username/password, follow the browser prompts to authorize GitHub.  
-6. **Verify:**  
-   * Go to your GitHub webpage. Refresh. You will see `notes.txt`.
+| | Git | GitHub |
+|---|---|---|
+| What is it? | Software installed on your computer | A website (github.com) |
+| What does it do? | Tracks changes to your files | Stores and shares those changes online |
+| Do you need the internet? | No | Yes |
 
-## **📘 Part 3: Collaboration Theory (10 mins)**
+You use Git *locally* (on your computer), and GitHub *remotely* (in the cloud).
 
-If we are all working on the same file at the same time, we might overwrite each other's work. To solve this, we use **Branches**.
+### Why Does This Matter?
 
-* **Main Branch:** The "official" version of the project.  
-* **Feature Branch:** A safe copy where you experiment.
+- **Backup:** Your work is safely stored on GitHub, even if your laptop breaks.
+- **History:** You can always go back to an earlier version.
+- **Sharing:** Anyone with the link can view (or contribute to) your work.
+- **Collaboration:** Multiple people can work on the same project without overwriting each other.
 
-When you are done experimenting, you make a **Pull Request (PR)**. This is asking the team: *"I have finished my experiment. Can we merge it into the main project?"*
+### Key Terms to Know
 
-## **💻 Exercise C: Teamwork Simulation (40 mins)**
+| Term | Plain English |
+|------|--------------|
+| **Repository (Repo)** | A project folder that Git is tracking |
+| **Commit** | A saved snapshot with a label describing what changed |
+| **Push** | Sending your snapshots from your computer up to GitHub |
+| **Pull** | Downloading the latest snapshots from GitHub to your computer |
 
-*Goal: Create a branch, edit safely, and merge via Pull Request.*
+---
 
-1. **Create a Branch:**  
-   * In VS Code, look at the bottom left corner. It likely says `main`. Click it.  
-   * Select **\+ Create new branch...**  
-   * Name it: `experiment-feature`.  
-   * *Intuition:* You are now in a parallel universe. Changes here won't affect the `main` code yet.  
-2. **Make a "Risky" Change:**  
-   * Open `notes.txt`.  
-   * Add a new line: "I am experimenting with a new feature here\!"  
-   * Save, Stage (+), and Commit (Message: "Updated notes in branch").  
-3. **Publish the Branch:**  
-   * Click **Publish Branch** (the cloud icon).  
-4. **The Pull Request (The Magic Moment):**  
-   * Go to your GitHub repository page in the browser.  
-   * You will see a yellow banner: *"experiment-feature had recent pushes."*  
-   * Click **Compare & pull request**.  
-   * Title: "Adding experimental notes".  
-   * Click **Create Pull Request**.  
-5. **Merge:**  
-   * Now, pretend you are the manager. Review the changes on the screen.  
-   * Click **Merge pull request**.  
-   * Click **Confirm merge**.  
-   * Delete the branch if prompted.  
-6. **The Final Sync:**  
-   * Go back to VS Code.  
-   * Switch back to the `main` branch (bottom left corner).  
-   * *Notice:* The text "I am experimenting..." is gone\! Why? Because your local computer doesn't know what happened on the cloud yet.  
-   * Click the **Synchronize** icon (bottom left next to main) or use Command Palette \-\> `Git: Pull`.  
-   * Watch the text appear. You have successfully collaborated with the cloud\!
+## 📘 Module 2: Local vs. Remote (15 mins)
 
-## **🎓 Wrap Up & Final Thoughts**
+### Two Places Your Work Lives
 
-You have done it\! You have gone from zero to a full collaborative workflow.
+When you use Git and GitHub, your project exists in two places:
 
-**Recap of commands (VS Code GUI equivalent):**
+```
+Your Computer (Local)          GitHub (Remote)
+┌─────────────────────┐       ┌─────────────────────┐
+│  Working Files      │       │                     │
+│  (what you edit)    │ ─────►│  GitHub Repository  │
+│                     │ Push  │  (the cloud copy)   │
+│  Commit History     │◄───── │                     │
+│  (your snapshots)   │ Pull  └─────────────────────┘
+└─────────────────────┘
+```
 
-1. **Clone:** Download from Cloud.  
-2. **Stage (+):** Prepare for photo.  
-3. **Commit:** Take the photo.  
-4. **Push:** Upload to Cloud.  
-5. **Pull:** Download updates from Cloud.
+- **Local** = the files on your laptop in VS Code. This is where you do your work.
+- **Remote** = the copy stored on GitHub. This is the shared, backed-up version.
 
-Keep practicing. Create a repo for your next project, even if it is just a grocery list or a personal journal. The more you use these tools, the more natural they will feel.
+### The Three-Zone Mental Model (Inside VS Code)
+
+When you make a change in VS Code, it goes through three stages before reaching GitHub:
+
+```
+[1] Working Files  →  [2] Staging Area  →  [3] Local Commit  →  GitHub
+ (you edited it)      (you selected it)     (you saved it)      (you shared it)
+```
+
+1. **Working Files** — You make changes (type, edit, delete).
+2. **Staging Area** — You choose *which* changes to include in the next snapshot (clicking the `+` in VS Code).
+3. **Commit** — You take the snapshot and write a label describing what you did.
+4. **Push** — You send the snapshot up to GitHub.
+
+> **Analogy:** Think of it like packing a suitcase. You lay out clothes (Working Files), choose what to pack (Staging), zip up the suitcase (Commit), then check it in at the airport (Push).
+
+### Demo: Cloning a Repository
+
+*The instructor will demonstrate cloning this repo to show how a remote repository becomes a local one.*
+
+1. Go to a GitHub repository page
+2. Click the green **Code** button → copy the HTTPS URL
+3. Open VS Code → `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) → type **Git: Clone**
+4. Paste the URL → choose a folder on your computer → click **Open**
+
+Now the project is on your computer. You can edit it locally, then push changes back to GitHub.
+
+---
+
+## 💻 Exercise A: Your First Repository & Commit (25 mins)
+
+*Goal: Create a GitHub repository and make your first commit using VS Code.*
+
+### Step 1 — Create a Repository on GitHub
+
+1. Go to [github.com](https://github.com) and log in.
+2. Click the **+** icon (top right) → **New repository**.
+3. Fill in:
+   - **Repository name:** `my-learning-journal`
+   - **Description:** `My notes from the Git & GitHub session`
+   - **Visibility:** Public
+   - **Check the box:** ✅ Add a README file
+4. Click **Create repository**.
+
+✅ You now have a repository on GitHub! Notice the `README.md` file that was created automatically.
+
+### Step 2 — Clone It to Your Computer
+
+1. On your new GitHub repository page, click the green **Code** button.
+2. Make sure **HTTPS** is selected. Copy the URL (it looks like `https://github.com/yourname/my-learning-journal.git`).
+3. Open **VS Code**.
+   - *Windows users:* Click the blue "Open a Remote Window" button at the bottom-left, then connect to WSL if prompted.
+4. Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to open the Command Palette.
+5. Type **Git: Clone** and select it.
+6. Paste the URL you copied.
+7. Choose a folder on your computer (e.g., your Documents folder).
+8. When prompted, click **Open Repository**.
+
+✅ Your repository is now on your computer and open in VS Code!
+
+### Step 3 — Create Your First File
+
+1. In VS Code's left sidebar (Explorer), right-click in the empty space → **New File**.
+2. Name the file `notes.txt`.
+3. Type something inside — for example:
+   ```
+   Day 1: Git is like a time machine for files.
+   GitHub is where those snapshots live in the cloud.
+   ```
+4. Save the file: `Ctrl+S` (Windows) or `Cmd+S` (Mac).
+
+### Step 4 — Stage, Commit & Push
+
+1. Click the **Source Control** icon in the left sidebar (it looks like a branching diagram, or press `Ctrl+Shift+G`).
+2. You'll see `notes.txt` listed under **Changes**.
+3. **Stage:** Hover over `notes.txt` and click the **+** button. It moves to **Staged Changes**.
+4. **Commit:** Type a message in the box at the top, for example: `Add my first notes`. Then click the **✔ Commit** button (or press `Ctrl+Enter`).
+5. **Push:** Click the **Sync Changes** button (or the cloud icon at the bottom of the screen).
+
+✅ Go to your GitHub repository and refresh the page — you should see `notes.txt` there!
+
+---
+
+## 💻 Exercise B: Make Changes & Stay in Sync (25 mins)
+
+*Goal: Edit your file, commit the change, and practice pulling updates from GitHub.*
+
+### Part 1 — Edit a File and Push Again
+
+1. Open `notes.txt` in VS Code.
+2. Add a new line:
+   ```
+   Day 2: Stage → Commit → Push is the core workflow!
+   ```
+3. Save the file.
+4. Go to **Source Control**, stage the change (**+**), commit with a message like `Add Day 2 notes`, and then push (Sync Changes).
+
+✅ Check GitHub — your new line should be there.
+
+### Part 2 — Edit Directly on GitHub (Simulating a Teammate's Change)
+
+Sometimes a colleague (or your future self on another computer) will make a change on GitHub directly. Let's simulate that:
+
+1. Go to your GitHub repository.
+2. Click on `README.md`.
+3. Click the **pencil icon** ✏️ (Edit this file) at the top right.
+4. Add a line at the bottom:
+   ```
+   Updated from GitHub directly!
+   ```
+5. Scroll down and click **Commit changes** → then **Commit changes** again in the dialog.
+
+✅ Now GitHub has a newer version than your local copy.
+
+### Part 3 — Pull the Changes to Your Computer
+
+1. Go back to VS Code.
+2. Click the **Sync Changes** button at the bottom (or `Ctrl+Shift+P` → **Git: Pull**).
+3. Open `README.md` in VS Code — you should see the line you added on GitHub.
+
+✅ Your local copy is now up to date. This is the **Pull** action — bringing the latest from GitHub to your computer.
+
+### The Golden Rule
+
+> **Always Pull before you Push.** When you work with others (or across multiple computers), always pull the latest changes before making your own. This avoids conflicts.
+
+---
+
+## 📘 Module 3: What is Google Colab? (10 mins) — Optional
+
+### Overview
+
+**Google Colab** (short for Colaboratory) is a free tool from Google that lets you write and run Python code in your browser — no installation needed.
+
+Think of it as a notebook where each "cell" can contain either text or runnable code. It's widely used in data science because:
+
+- **No setup required** — just open your browser and start coding
+- **Free computing power** — Google provides free access to fast processors (GPUs)
+- **Easy sharing** — share a link like a Google Doc
+- **Connects to GitHub** — you can save your Colab notebooks directly to your GitHub repository
+
+### How Colab Connects to GitHub
+
+You can save a Colab notebook to GitHub in two clicks:
+
+1. In Colab: **File** → **Save a copy in GitHub**
+2. Choose your repository and branch, write a commit message, click **OK**
+
+Your notebook (`.ipynb` file) will appear in your GitHub repository — just like any other file.
+
+### Try It (If Time Allows)
+
+1. Go to [colab.research.google.com](https://colab.research.google.com)
+2. Click **New Notebook**
+3. In the first cell, type:
+   ```python
+   print("Hello from Colab!")
+   ```
+4. Run it with **Shift + Enter**
+5. Go to **File** → **Save a copy in GitHub** → select `my-learning-journal` → write a commit message → click **OK**
+6. Refresh your GitHub repository — the `.ipynb` file should be there!
+
+---
+
+## 🎓 Wrap Up & Key Takeaways (included in Module 3 time)
+
+You've covered the complete beginner workflow for Git and GitHub!
+
+**What you learned:**
+
+- **Git** tracks changes to your files like a time machine
+- **GitHub** stores those changes in the cloud
+- **Local** = your computer; **Remote** = GitHub
+- The core workflow: **Stage → Commit → Push**
+- To get the latest from GitHub: **Pull**
+- **VS Code** makes all of this accessible without needing to memorise commands
+
+**What to do next:**
+
+- Use this workflow for your next project — even a simple one
+- The more you practise, the more natural it feels
+- Reference the `git_command_cheatsheet.md` whenever you need a reminder
+
+> "The best way to learn Git is to use it. Start with one file, one commit, one push. You've already done that today." 🎉
