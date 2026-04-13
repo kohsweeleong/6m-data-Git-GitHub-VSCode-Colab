@@ -1,1 +1,4 @@
 test
+## Practice & Reflection Goal: Build muscle memory for Stage → Commit → Push
+## Shortcut key: Press Ctrl + Shift + G then G for the Source Control. 
+Write a clear commit message
