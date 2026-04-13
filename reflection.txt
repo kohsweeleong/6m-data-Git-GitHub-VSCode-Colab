@@ -1,0 +1,26 @@
+## Q1. The "Snapshot" Workflow
+One thing I now understand is that saving work in Git isn't a single step like clicking "Save" in a Word document; it’s a three-tier progression. I could explain to a friend that Git works like a professional photo shoot.
+
+First, you have your Working Directory where you’re actively making a mess (coding). 
+When you’re ready, you "Stage" your files (the + icon), 
+which is like posing your subjects for the camera. 
+Then, you "Commit," which is like snapping the photo—it creates a permanent, 
+time-stamped version of that exact moment. Finally, 
+"Pushing" is like uploading that photo to an online gallery (GitHub) so others can see it.
+Understanding this distinction helps me see that my code isn't truly 
+"saved" in my history until I’ve completed the full loop.
+
+## Q2. Managing Sync Conflicts
+I am still unsure about what happens when the local version of my code on my laptop 
+doesn't match the remote version on GitHub—specifically, how to handle 
+"Merge Conflicts" without accidentally deleting my work. It feels 
+intimidating when the "Sync" button shows an error because someone else 
+(or even I, on a different computer) changed the same line of code.
+
+To figure this out, my plan is to intentionally create a conflict. 
+I will edit a file directly on the GitHub website and then try to 
+edit that same line in VS Code and push it. This will force an error, 
+allowing me to practice using the VS Code Merge Editor to resolve 
+the differences. I also plan to look up a "Git Pull vs Git Fetch" 
+tutorial to better understand how to keep my local machine updated 
+before I start working.
